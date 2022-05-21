@@ -17,8 +17,8 @@ describe Account do
     end
   end
 
-  context "#withdrawl" do
-    it "lets you withdrawl funds from your account" do
+  context "#withdraw" do
+    it "lets you withdraw funds from your account" do
       account = Account.new
       account.deposit(100)
       account.withdrawl(50)
