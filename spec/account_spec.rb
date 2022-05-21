@@ -17,5 +17,14 @@ describe Account do
     end
   end
 
+  context "#withdrawl" do
+    it "lets you withdrawl funds from your account" do
+      account = Account.new
+      account.deposit(100)
+      account.withdrawl(50)
+      expect(account.balance()).to eq 50
+    end
+  end
+
 
 end
