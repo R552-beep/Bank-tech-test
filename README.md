@@ -33,7 +33,7 @@ date || credit || debit || balance
 ```
 
 User Story
-
+```
 As a bank customer,
 So that I can add money to my bank account,
 I'd like to be able to deposit my funds.
@@ -49,7 +49,7 @@ I'd like to sea all transaction history with date.
 As a bank customer,
 So that I can check how much money is in my account,
 I'd like to be able to print my bank statement.
-
+```
 
 
 
