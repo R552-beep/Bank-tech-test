@@ -8,4 +8,14 @@ describe Account do
       expect(account.balance).to eq 0
     end
   end
+
+  context "#deposit" do
+    it "lets you deposit funds into your account" do
+      account = Account.new
+      account.deposit(100) 
+       expect(account.balance()).to eq 100
+    end
+  end
+
+
 end
