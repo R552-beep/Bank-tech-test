@@ -21,8 +21,17 @@ describe Account do
     it "lets you withdraw funds from your account" do
       account = Account.new
       account.deposit(100)
-      account.withdrawl(50)
+      account.withdraw(50)
       expect(account.balance()).to eq 50
+    end
+  end
+
+  context "statement" do
+    it "prints the current balance" do
+      account = Account.new
+      account.deposit(100)
+      account.withdraw(50)
+      expect(account.statement).to eq "balance\n£50"
     end
   end
 
