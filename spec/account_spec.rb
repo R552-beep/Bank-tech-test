@@ -1,9 +1,10 @@
 require 'account'
 
 describe Account do
+  let(:account) { Account.new }
+
   context "#bank account" do 
     it 'has a starting balance of 0' do
-      account = Account.new
       account.balance
       expect(account.balance).to eq 0
     end
@@ -11,15 +12,13 @@ describe Account do
 
   context "#deposit" do
     it "lets you deposit funds into your account" do
-      account = Account.new
       account.deposit(100) 
-       expect(account.balance()).to eq 100
+      expect(account.balance()).to eq 100
     end
   end
 
   context "#withdraw" do
     it "lets you withdraw funds from your account" do
-      account = Account.new
       account.deposit(100)
       account.withdraw(50)
       expect(account.balance()).to eq 50
@@ -28,7 +27,6 @@ describe Account do
 
   context "statement" do
     it "prints the current balance" do
-      account = Account.new
       account.deposit(100)
       account.withdraw(50)
       expect(account.statement).to eq "balance\n£50"
