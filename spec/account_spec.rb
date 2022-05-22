@@ -1,4 +1,5 @@
 require 'account'
+require 'date'
 
 describe Account do
   let(:account) { Account.new }
@@ -12,14 +13,14 @@ describe Account do
 
   context "#deposit" do
     it "lets you deposit funds into your account" do
-      account.deposit(100) 
+      account.deposit(Date.today, 100) 
       expect(account.balance()).to eq 100
     end
   end
 
   context "#withdraw" do
     it "lets you withdraw funds from your account" do
-      account.deposit(100)
+      account.deposit(Date.today, 100)
       account.withdraw(50)
       expect(account.balance()).to eq 50
     end
@@ -27,8 +28,8 @@ describe Account do
 
   context "statement" do
     it "prints the current balance" do
-      account.deposit(100)
-      account.withdraw(50)
+      account.deposit(Date.today, 100)
+      account.withdraw(Date.today, 50)
       expect(account.statement).to eq "balance\n£50"
     end
   end
