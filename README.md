@@ -1,12 +1,10 @@
 # Bank-tech-test
 
-Today, you'll practice doing a tech test.
+## Task:
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
-
-You'll get to practice your OO design and TDD skills.
-
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+My task for this project was to create practice tech test.
+Focus for this project is to practice OO design and TDD skills.
+This is a solo project where it will give us the opportunity to review our own code so we can practice reflecting and improving our own work.
 
 ## Specification
 
@@ -16,6 +14,18 @@ You'll work alone, and you'll also review your own code so you can practice refl
 * Deposits, withdrawal.
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
+
+## Instructions for setup and interaction on IRB.
+
+* clone this repo `https://github.com/R552-beep/Bank-tech-test.git`
+* `cd into the repository folder.
+* `rspec to run tests.
+* load the programme in IRB `require './lib/account.rb'
+* Create an account: `account = Account.New`
+* Deposite funds: `account.deposit(100)
+* Withdraw funds: `account.withdraw(50)
+* Printing a Statement: `account.print_statement`
+
 
 ### Acceptance criteria
 
