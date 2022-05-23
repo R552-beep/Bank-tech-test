@@ -24,14 +24,20 @@ describe Account do
       account.withdraw(50)
       expect(account.balance()).to eq 50
     end
+
+    it 'allows client to make a withdrawal' do
+      expect { account.withdraw(Date.today, 1000) }.to change{ account.balance }.by -1000
+    end
+  
   end
 
-  context "statement" do
-    it "prints the current balance" do
-      account.deposit(Date.today, 100)
-      account.withdraw(Date.today, 50)
-      expect(account.statement).to eq "balance\n£50"
+  context "#prints account statement" do
+    it "lets you prints an account statment " do
+      account.deposit(Date.today, 2000)
+      account.withdraw(Date.today, 500)
+      expect(account.print_statement).to eq (["2022-05-23 || No Credit ||500 || 1500", "2022-05-23 ||2000 || No Debit || 2000"])
     end
+        
   end
 
 
