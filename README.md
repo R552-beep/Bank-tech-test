@@ -22,8 +22,8 @@ This is a solo project where it will give us the opportunity to review our own c
 * `rspec to run tests.
 * load the programme in IRB `require './lib/account.rb'
 * Create an account: `account = Account.New`
-* Deposite funds: `account.deposit(100)
-* Withdraw funds: `account.withdraw(50)
+* Deposite funds: `account.deposit(100)`
+* Withdraw funds: `account.withdraw(50)`
 * Printing a Statement: `account.print_statement`
 
 
