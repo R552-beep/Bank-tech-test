@@ -1,5 +1,3 @@
-require "date"
-
 class Account
   attr_reader :balance, :transaction_log
   
@@ -8,14 +6,14 @@ class Account
     @balance = 0
   end
 
-  def deposit(amount, date = Date.today)
+  def deposit(amount, time = Time.new.strftime("%d/%m/%Y"))
     @balance += amount
-    @transaction_log << "#{date} ||#{amount} || No Debit || #{balance}"
+    @transaction_log << "#{time} ||#{amount} || No Debit || #{balance}"
   end
 
-  def withdraw(amount, date = Date.today)
+  def withdraw(amount, time = Time.new.strftime("%d/%m/%Y"))
     @balance -= amount
-    @transaction_log << "#{date} || No Credit ||#{amount} || #{balance}"
+    @transaction_log << "#{time} || No Credit ||#{amount} || #{balance}"
   end
 
   def balance_total
@@ -29,5 +27,5 @@ class Account
       puts element
     end  
   end
-  
+
 end
