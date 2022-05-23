@@ -29,7 +29,7 @@ describe Account do
     it "lets you prints an account statment " do
       account.deposit(2000, time = Time.new.strftime("%d/%m/%Y"))
       account.withdraw(500, time = Time.new.strftime("%d/%m/%Y"))
-      expect(account.print_statement).to eq (["23/05/2022 || No Credit ||500 || 1500", "23/05/2022 ||2000 || No Debit || 2000"])
+      expect(account.print_statement).to eq (["23/05/2022 || Credit ||500 || 1500", "23/05/2022 ||2000 || Debit || 2000"])
     end      
   end    
 

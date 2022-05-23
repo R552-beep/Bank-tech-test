@@ -8,12 +8,12 @@ class Account
 
   def deposit(amount, time = Time.new.strftime("%d/%m/%Y"))
     @balance += amount
-    @transaction_log << "#{time} ||#{amount} || No Debit || #{balance}"
+    @transaction_log << "#{time} ||#{amount} || Debit || #{balance}"
   end
 
   def withdraw(amount, time = Time.new.strftime("%d/%m/%Y"))
     @balance -= amount
-    @transaction_log << "#{time} || No Credit ||#{amount} || #{balance}"
+    @transaction_log << "#{time} || Credit ||#{amount} || #{balance}"
   end
 
   def balance_total
