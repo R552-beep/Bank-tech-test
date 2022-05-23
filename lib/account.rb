@@ -8,12 +8,12 @@ class Account
     @balance = 0
   end
 
-  def deposit(date = Date.today, amount)
+  def deposit(amount, date = Date.today)
     @balance += amount
     @transaction_log << "#{date} ||#{amount} || No Debit || #{balance}"
   end
 
-  def withdraw(date = Date.today, amount)
+  def withdraw(amount, date = Date.today)
     @balance -= amount
     @transaction_log << "#{date} || No Credit ||#{amount} || #{balance}"
   end
@@ -29,4 +29,5 @@ class Account
       puts element
     end  
   end
+  
 end
