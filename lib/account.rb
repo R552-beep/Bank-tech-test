@@ -3,21 +3,23 @@ class Account
   
   def initialize
     @transaction_log = []
-    @balance = 0
+    @balance = 0.00
   end
 
   def deposit(amount, time = Time.new.strftime("%d/%m/%Y"))
     @balance += amount
+    amount = '%.2f'%amount 
     @transaction_log << "#{time} ||#{amount} || Debit || #{balance}"
   end
 
   def withdraw(amount, time = Time.new.strftime("%d/%m/%Y"))
     @balance -= amount
+    amount = '%.2f'%amount 
     @transaction_log << "#{time} || Credit ||#{amount} || #{balance}"
   end
 
   def balance_total
-    return @balance
+    return @balance 
   end
 
   def print_statement
