@@ -43,6 +43,27 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
+## Approach
+
+* Created a user stories to breakdown the task.
+* Written down brief steps to guide me & a simple domain model.
+* By creating a simple tests for each user story
+* By writing a simple method to passing each test
+* Building upon each method to expand.
+
+## Domain Model
+
+* I have created a rough outline of attributes & methods for my `Account class`
+
+| Attributes | Methods |
+|:---------:|:------:|
+| balance | balance(checks balance) |
+| transaction log | records transaction |
+|| withdraw(money)
+|| deposit(money)
+|| print_statement
+
+
 User Story
 ```
 As a bank customer,
@@ -61,6 +82,11 @@ As a bank customer,
 So that I can check how much money is in my account,
 I'd like to be able to print my bank statement.
 ```
+
+## Code Structure
+
+I have decided to keep things simple, where I would try to build upon one class `Account` with idea of refactoring later if required.
+
 
 
 
