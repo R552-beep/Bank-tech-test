@@ -18,14 +18,15 @@ This is a solo project where it will give us the opportunity to review our own c
 ## Instructions for setup and interaction on IRB.
 
 * clone this repo `https://github.com/R552-beep/Bank-tech-test.git`
-* `cd into the repository folder.
-* `rspec to run tests.
-* load the programme in IRB `require './lib/account.rb'
+* cd into the repository folder.
+* rspec to run tests.
+* load the programme in IRB `require './lib/account'
 * Create an account: `account = Account.New`
 * Deposite funds: `account.deposit(100)`
 * Withdraw funds: `account.withdraw(50)`
 * Printing a Statement: `account.print_statement`
 
+<img width="791" alt="Screenshot 2022-05-24 at 10 40 44" src="https://user-images.githubusercontent.com/98535979/170003364-f1221338-0ae8-4590-b650-0b1b0c786912.png">
 
 ### Acceptance criteria
 
