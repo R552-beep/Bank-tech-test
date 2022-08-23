@@ -1,23 +1,24 @@
+
 require_relative 'transaction_log'
 
 class Account
   attr_reader :balance
   
   def initialize
-    # @transaction_log = []
+    @transaction_log = []
     @balance = 0.00
   end
 
   def deposit(amount)
     @balance += amount
     amount = '%.2f'%amount 
-    # @transaction_log << "#{amount} || Debit || #{balance}"
+    @transaction_log << "#{amount} || Debit || #{balance}"
   end
 
   def withdraw(amount)
     @balance -= amount
     amount = '%.2f'%amount 
-    # @transaction_log << "|| Credit ||#{amount} || #{balance}"
+    @transaction_log << "|| Credit ||#{amount} || #{balance}"
   end
 
   def balance_total
