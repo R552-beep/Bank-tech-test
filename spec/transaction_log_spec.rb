@@ -5,17 +5,17 @@ describe Transaction_log do
 
   context "#display" do 
     it 'logs and shows the date of the transaction' do
-      expect(transaction_log.display).to eq "#{Time.new.strftime("%d/%m/%Y")} || ||  ||  "
+      expect(subject.display).to eq "#{Time.new.strftime("%d/%m/%Y")} || ||  ||  "
     end
 
     it ' shows the amount withdrawn from the account' do
-      debit_transaction = Transaction_log.new(debit: 10.0)
-      expect(debit_transaction.display).to eq "#{Time.new.strftime("%d/%m/%Y")} || || 10.00||  "
+      debit_transaction = Transaction_log.new(debit: 10)
+      expect(debit_transaction.display).to eq "#{Time.new.strftime("%d/%m/%Y")} || || 10 ||  "
     end
 
     it ' show the amount deposited to the account' do
-      credit_transaction = Transaction_log.new(credit: 20.0)
-      expect(credit_transaction.display).to eq "#{Time.new.strftime("%d/%m/%Y")} || 20.00|| ||  "
+      credit_transaction = Transaction_log.new(credit: 20)
+      expect(credit_transaction.display).to eq "#{Time.new.strftime("%d/%m/%Y")} || 20||  ||  "
     end
 
 
