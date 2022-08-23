@@ -1,9 +1,24 @@
-class Transaction_log
-  def initialize
-    @date = Time.new
 
-    def date 
-      @date = strftime('%d/%m/%y')
+class Transaction_log
+  
+  def initialize(credit: nil, debit: nil, balance: nil)
+
+    @date = Time.new
+    @debit = debit
+    @credit = credit
+    @balance = balance
+
+    def date
+      @date.strftime('%d/%m/%Y')
     end
+
+    def display
+      "#{date} || #{@credit}|| #{@debit} || #{@balance} "
+    end
+
+    
+
+   
+    
   end
 end
