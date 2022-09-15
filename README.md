@@ -1,8 +1,8 @@
 # Bank-tech-test
 
-## Task:
+## Task
 
-My task for this project was to create practice tech test.
+My task for this project was to create a practice tech test.
 Focus for this project is to practice OO design and TDD skills.
 This is a solo project where it will give us the opportunity to review our own code so we can practice reflecting and improving our own work.
 
@@ -18,13 +18,14 @@ This is a solo project where it will give us the opportunity to review our own c
 ## Instructions for setup and interaction on IRB.
 
 * clone this repo `https://github.com/R552-beep/Bank-tech-test.git`
+* Install dependencies with: Bundle install 
 * cd into the repository folder.
-* rspec to run tests.
+* Run test suites with: rspec & rubocop.
 * load the programme in IRB `require './lib/account'
-* Create an account: `account = Account.New`
+* Create an account: `account = Account.new`
 * Deposite funds: `account.deposit(100)`
 * Withdraw funds: `account.withdraw(50)`
-* Printing a Statement: `account.print_statement`
+* To print a Statement: `account.statement`
 
 <img width="791" alt="Screenshot 2022-05-24 at 10 40 44" src="image.png">
 
@@ -76,18 +77,26 @@ I'd like to be able to withdraw funds.
 
 As a bank customer,
 So that I can see all activity in my account,
-I'd like to sea all transaction history with date.
+I'd like to see all transaction history with date.
 
 As a bank customer,
 So that I can check how much money is in my account,
 I'd like to be able to print my bank statement.
 ```
 
-## Code Structure
+Edge case
+```
+As a bank customer,
+So that I only spend funds available in my account,
+I'd like and error message with "Insufficient funds" to pop up
+If I go over my max balance.
+```
 
-I have decided to keep things simple, where I would try to build upon one class `Account` with idea of refactoring later if required.
-
-
-
+## Tech Stack
+* Ruby
+* irb
+* Rspec
+* Rubocop
+* Simplecov
 
 
