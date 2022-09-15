@@ -2,36 +2,40 @@
 require 'account'
 
 describe Account do
-  let(:account) { Account.new }
 
+  let(:account) { Account.new }
+ 
   context "#bank account" do 
     it 'has a starting balance of 0' do
       account.balance
       expect(account.balance).to eq 0
     end
-  end
-
-  context "#deposit" do
+ 
     it "lets you deposit funds into your account" do
       account.deposit(100) 
       expect(account.balance()).to eq 100
     end
-  end
-
-  context "#withdraw" do
+  
     it "lets you withdraw funds from your account" do
       account.deposit(100)
       account.withdraw(50)
       expect(account.balance()).to eq 50
     end
+  
+  end
+  
+  context "#print statement" do
+    it " lets you print a bank statement" do
+      account.deposit(100)
+      account.withdraw(50)
+      expect { account.statement }.not_to raise_error
+    end
   end
 
-  # context "#prints account statement" do
-  #   it "lets you prints an account statment " do
-  #     account.deposit(2000, time = Time.new.strftime("%d/%m/%Y"))
-  #     account.withdraw(500, time = Time.new.strftime("%d/%m/%Y"))
-  #     expect(account.print_statement).to eq (["24/05/2022 || Credit ||500.00 || 1500.0", "24/05/2022 ||2000.00 || Debit || 2000.0"])
-  #   end      
-  # end    
-
+  context "#raises error" do
+    it " should raise an error if no funds are avaialble " do 
+      expect { account.withdraw(5) }.to raise_error ("Insufficient funds")
+    end
+  end
+  
 end

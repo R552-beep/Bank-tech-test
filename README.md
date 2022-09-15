@@ -26,7 +26,7 @@ This is a solo project where it will give us the opportunity to review our own c
 * Withdraw funds: `account.withdraw(50)`
 * Printing a Statement: `account.print_statement`
 
-<img width="791" alt="Screenshot 2022-05-24 at 10 40 44" src="https://user-images.githubusercontent.com/98535979/170003364-f1221338-0ae8-4590-b650-0b1b0c786912.png">
+<img width="791" alt="Screenshot 2022-05-24 at 10 40 44" src="image.png">
 
 ### Acceptance criteria
 

@@ -1,36 +1,43 @@
 
-require_relative 'transaction_log'
+require_relative 'transaction' 
+require_relative 'print' 
 
 class Account
-  attr_reader :balance
+  attr_reader :balance, :statement
   
   def initialize
-    @transaction_log = []
     @balance = 0.00
+    @printer = Print.new 
+    @statement = []
+    
   end
 
   def deposit(amount)
     @balance += amount
-    amount = '%.2f'%amount 
-    @transaction_log << "#{amount} || Debit || #{balance}"
+    record_deposit(credit: amount, balance: @balance) 
   end
 
   def withdraw(amount)
-    @balance -= amount
-    amount = '%.2f'%amount 
-    @transaction_log << "|| Credit ||#{amount} || #{balance}"
+    fail 'Insufficient funds' if @balance < amount 
+    @balance -= amount 
+    record_withdrawal(debit: amount, balance: @balance) 
   end
 
-  def balance_total
-    return @balance 
+  def statement
+    @printer.print("date || credit || debit || balance") 
+    @printer.print(@statement)
   end
 
-  # def print_statement
-  #   puts "date || credit || debit || balance"
-  #   @transaction_log.reverse.each do
-  #     |element| 
-  #     puts element
-  #   end  
-  # end
-
+  private
+    
+  def record_deposit(credit: nil, balance: nil)
+    amount = Transaction.new(credit: '%.2f' % credit, balance: '%.2f' % balance) 
+    @statement << (amount.display_template)
+  end
+    
+  def record_withdrawal(debit: nil, balance: nil)
+    amount = Transaction.new(debit: '%.2f' % debit, balance: '%.2f' % balance) 
+    @statement << (amount.display_template) 
+  end
+  
 end
