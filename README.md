@@ -54,16 +54,14 @@ date || credit || debit || balance
 
 ## Domain Model
 
-* I have created a rough outline of attributes & methods for my `Account class`
+* I have created a rough outline of methods for my `Account class`, `Transaction class` and `Print class`
 
-| Attributes | Methods |
-|:---------:|:------:|
-| balance | balance(checks balance) |
-| transaction log | records transaction |
-|| withdraw(money)
-|| deposit(money)
-|| print_statement
-
+| Account | Transaction | Print |
+|:---------:|:------:|:------:|
+|balance|date|prints header(string)|
+|withdraw(money)|debited amount|print_statement(output string)| 
+|deposit(money)|credited amount|
+|print_statement|transaction history|
 
 User Story
 ```
